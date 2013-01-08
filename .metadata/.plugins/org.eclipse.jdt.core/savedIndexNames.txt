@@ -1,7 +1,0 @@
-INDEX VERSION 1.126+/Users/reed/Dev/GolfJoust/GolfJoustEclipse/.metadata/.plugins/org.eclipse.jdt.core
-789125957.index
-348231376.index
-2310659746.index
-4070556352.index
-203011122.index
-2512781352.index
