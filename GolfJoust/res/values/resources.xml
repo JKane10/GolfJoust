@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="action_list">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
+    <string-array name="course_tabs">
+        <item>Nearby</item>
+        <item>Home</item>
+        <item>Search</item>
     </string-array>
 </resources>
     
