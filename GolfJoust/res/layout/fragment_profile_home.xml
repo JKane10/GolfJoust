@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingTop="64dp"
+        android:paddingLeft="8dp"
+        android:background="@drawable/sky_background" >
+        
+        <ImageView 
+            android:id="@+id/profile_photo"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+        
+        <TextView 
+            android:id="@+id/profile_name_view"
+            android:text="@string/profile_name"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" 
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_marginLeft="8dp" />
+        
+        <TextView 
+            android:id="@+id/home_course_view"
+            android:text="@string/home_course" 
+            android:textSize="16dp"
+            android:layout_height="wrap_content" 
+            android:layout_width="wrap_content" 
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_below="@id/profile_name_view" 
+            android:layout_marginLeft="8dp" />
+        
+		<ImageButton 
+            android:id="@+id/facebook_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickFacebook" />
+        
+        <ImageButton
+            android:id="@+id/twitter_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/facebook_icon"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickTwitter" />
+        
+        <ImageButton
+            android:id="@+id/linked_in"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/twitter_icon"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickLinkedIn" />
+        
+        <Button
+            android:id="@+id/change_home_button"
+            android:text="@string/change_home"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:layout_below="@id/facebook_icon"
+	    	android:layout_toRightOf="@id/profile_photo"
+	    	android:layout_marginRight="8dp"
+	   		android:onClick="onClickChangeHomeButton" />
+     
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/change_home_button" 
+         android:orientation="horizontal"
+         android:gravity="center_horizontal"
+         android:padding="16dp" >
+         
+        <ImageView 
+            android:id="@+id/badge1"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="8dp" />
+        
+        <ImageView 
+            android:id="@+id/badge2"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="8dp" />
+        
+        <ImageView 
+            android:id="@+id/badge3"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="8dp" />
+  
+        <ImageView 
+            android:id="@+id/badge4"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="8dp" />
+        </LinearLayout>
+        
+     <TextView 
+         android:id="@+id/level_text"
+         android:text="@string/level"
+         android:textSize="24dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/change_home_button"
+         android:layout_marginTop="96dp" />
+
+     <TextView
+         android:id="@+id/handicap_text"
+         android:text="@string/handicap"
+         android:textSize="24dp"
+         android:paddingTop="16dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/level_text" />
+     
+     <TextView
+         android:id="@+id/stroke_avg_text"
+         android:text="@string/stroke_avg"
+         android:textSize="24dp"
+         android:paddingTop="16dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/handicap_text" />
+     
+     <TextView 
+         android:id="@+id/level_acq"
+         android:text="@string/level"
+         android:textSize="24dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/change_home_button"
+         android:layout_marginTop="96dp"
+         android:layout_alignParentRight="true" />
+     
+     <TextView
+         android:id="@+id/handicap_acq"
+         android:text="@string/likes"
+         android:textSize="24dp"
+         android:paddingTop="16dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/level_acq"
+         android:layout_alignParentRight="true" />
+     
+     <TextView
+         android:id="@+id/par3_avg"
+         android:text="@string/likes"
+         android:textSize="24dp"
+         android:paddingTop="16dp"
+         android:paddingLeft="48dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/handicap_acq"
+         android:layout_toRightOf="@id/stroke_avg_text" />
+         
+   	<TextView 
+   	    android:id="@+id/par4_avg"
+   	    android:text="@string/likes"
+   	    android:textSize="24dp"
+   	    android:paddingTop="16dp"
+   	    android:paddingLeft="8dp"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_below="@id/handicap_acq"
+   	    android:layout_toRightOf="@id/par3_avg" />
+   	
+   	<TextView 
+   	    android:id="@+id/par5_avg"
+   	    android:text="@string/likes"
+   	    android:textSize="24dp"
+   	    android:paddingTop="16dp"
+   	    android:paddingLeft="8dp"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_below="@id/handicap_acq"
+   	    android:layout_toRightOf="@id/par4_avg" />
+          
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_green" 
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingBottom="16dp" >
+
+    <Button
+        android:id="@+id/register_button"
+        style="@style/input_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/login_green_button"
+        android:text="REGISTER" />
+
+    <Button
+        android:id="@+id/login_button"
+        style="@style/input_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_fb"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/login_green_button"
+        android:text="LOGIN WITH EMAIL" />
+
+    <TextView
+        android:id="@+id/golfjoust_signage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:text="GolfJoust"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <ImageView
+        android:id="@+id/golf_joust_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/golfjoust_signage"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/login_fb"
+        style="@style/input_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register_button"
+        android:layout_marginBottom="14dp"
+        android:background="#3B5998"
+        android:text="LOGIN WITH FACEBOOK" />
+
+    <Button
+        android:id="@+id/login_as_guest_button"
+        style="@style/input_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/login_green_button"
+        android:text="CLICK ME" />
+
+</RelativeLayout>

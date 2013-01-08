@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Background -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sky_background" >
+
+    <!-- Top bar -->
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/top_bar" />
+
+    <!-- Deal picture -->
+
+    <ImageView
+        android:id="@+id/deal_picture"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_launcher" />
+
+    <!-- Course name+Location -->
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deal_picture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Course Name Goes Here"
+        android:textSize="16dp" />
+
+    <!-- text containing course description -->
+
+    <TextView
+        android:id="@+id/course_description"
+        android:layout_width="250dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="THIS IS WHERE THE COURSE DESCRIPTION GOES..."
+        android:layout_below="@+id/course_name"
+        android:textSize="12dp" />
+    
+    <TextView 
+        android:id="@+id/description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Description"
+        android:textSize="16dp" />
+        
+        />
+    
+        <TextView
+        android:id="@+id/deal_description"
+        android:layout_width="250dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="THIS IS WHERE THE DEAL DESCRIPTION GOES..."
+        android:layout_below="@+id/description_text"
+        android:textSize="12dp" />
+    
+    
+
+    <!-- Add to deals or no thanks buttons -->
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/no_button"
+        android:layout_marginBottom="2dp"
+        android:text="Add to my Deals" />
+    
+        <Button
+        android:id="@+id/no_button"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:text="No Thanks" />
+
+    <!-- Grass button section -->
+
+    <LinearLayout
+        android:id="@+id/TabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/grass"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</RelativeLayout>	

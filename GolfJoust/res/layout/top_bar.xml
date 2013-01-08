@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/TabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        android:background="@drawable/topbarbgrepeat"
+        >
+
+	    <Button 
+	        android:id="@+id/JoustButton"
+	        android:layout_width="64dp"
+	        android:layout_height="50dp"
+	        android:background="@drawable/joustbutton"
+	        android:onClick="onClickJoustButton"
+	        android:layout_alignParentLeft="true"
+	        />
+	    
+	    <Button 
+	        android:id="@+id/DealsButton"
+	        android:layout_width="64dp"
+	        android:layout_height="50dp"
+	        android:layout_toRightOf="@+id/JoustButton"
+	        android:background="@drawable/dealsbutton"
+	        />
+
+	    <Button
+	        android:id="@+id/HomeButton"
+	        android:layout_width="64dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:background="@drawable/homebutton"/>
+
+	    <Button
+	        android:id="@+id/ExploreButton"
+	        android:layout_width="64dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_toLeftOf="@+id/HomeButton"
+	        android:background="@drawable/explorebutton"/>
+
+	    <Button
+	        android:id="@+id/GalleryButton"
+	        android:layout_width="64dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+	        android:background="@drawable/gallerybutton"/>
+	        
+    </RelativeLayout>
+    <View
+        android:layout_below="@id/TabBar"
+        android:layout_height="1dp"
+	    android:layout_width="fill_parent"
+	    android:background="#FF111111" />
+    <ImageView
+        android:src="@drawable/gallerybuttonbottom"
+        android:layout_below="@id/TabBar"
+        android:layout_centerHorizontal="true"
+        android:layout_width="64dp"
+        android:layout_height="18dp"
+        />
+    
+         <!--    android:layout_marginLeft="128dp"  -->
+
+</RelativeLayout>

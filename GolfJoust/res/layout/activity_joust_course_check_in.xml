@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Background -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sky_background" >
+
+    <!-- Top bar -->
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/top_bar" />
+
+    <!-- Course picture -->
+
+    <ImageView
+        android:id="@+id/course_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/ic_launcher" />
+
+    <!-- Course name+Location -->
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/course_picture"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@+id/course_picture"
+        android:text="Course Location"
+        android:textSize="16dp" />
+
+    <!-- thumbs up and down Facebook, twitter, internet buttons? -->
+
+    <ImageView
+        android:id="@+id/thumbs_up"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_below="@+id/course_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_action_search" />
+
+    <TextView
+        android:id="@+id/num_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignTop="@+id/thumbs_up"
+        android:layout_toRightOf="@+id/thumbs_up"
+        android:text="@string/likes" />
+
+    <ImageView
+        android:id="@+id/thumbs_down"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignTop="@+id/num_likes"
+        android:layout_marginLeft="19dp"
+        android:layout_toRightOf="@+id/num_likes"
+        android:src="@drawable/ic_action_search" />
+
+    <TextView
+        android:id="@+id/num_dislikes"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignRight="@+id/course_name"
+        android:layout_alignTop="@+id/thumbs_down"
+        android:text="@string/likes" />
+
+    <!-- side scrolling list containing pictures -->
+
+    <HorizontalScrollView
+        android:id="@+id/picture_bar"
+        android:layout_width="275dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/course_picture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/course_picture1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- text containing course description -->
+
+    <TextView
+        android:id="@+id/course_description"
+        android:layout_width="235dp"
+        android:layout_height="140dp"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="THIS IS WHERE THE COURSE DESCRIPTION GOES...I GUESS"
+        android:layout_below="@+id/picture_bar"
+        android:textSize="12dp" />
+
+    <!-- book tee time button -->
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="Check In" />
+
+    <!-- Grass button section -->
+
+    <LinearLayout
+        android:id="@+id/TabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/grass"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</RelativeLayout>

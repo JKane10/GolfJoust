@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sky_background" >
+    
+       <!-- Top bar -->
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/top_bar" />
+    
+    <!-- Text box saying "Tees" -->
+    <TextView
+      android:id="@+id/Tee_String"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="70dp"
+      android:layout_centerHorizontal="true"
+      android:text="@string/tees"
+      android:textSize="25dp"
+      android:textColor="#000000"
+     />
+    
+	<!-- Relative Layout containing Tee color buttons -->
+	<RelativeLayout
+	    android:layout_width="fill_parent"
+   		android:layout_height="wrap_content"
+   		android:layout_centerHorizontal="true"
+   		android:layout_marginTop="120dp">
+	    
+	    <Button 
+	        android:id="@+id/green_Tee_Button"
+	        android:background="@drawable/greentee"
+	        android:layout_centerHorizontal="true"
+	        android:layout_width="75dp"
+	        android:layout_height="40dp"	        
+	        />
+	    
+	    <Button 
+	        android:id="@+id/red_Tee_Button"
+	        android:background="@drawable/redtee"
+	        android:layout_width="75dp"
+	        android:layout_height="40dp"
+	        android:layout_marginLeft="25dp"
+	        android:layout_toRightOf="@+id/green_Tee_Button"
+	        android:layout_alignParentTop="true"   
+	        />
+
+	     <Button
+	         android:id="@+id/blue_Tee_Button"
+	         android:layout_width="75dp"
+	         android:layout_height="40dp"
+	         android:layout_marginRight="25dp"
+	         android:layout_alignParentTop="true"
+	         android:layout_toLeftOf="@+id/green_Tee_Button"
+	         android:background="@drawable/bluetee" />
+	    
+	    </RelativeLayout>
+	    
+	<!-- Start here text -->
+	
+	<TextView 
+	    android:id="@+id/start_here_text"
+	    android:layout_centerHorizontal="true"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/start_here"
+	    android:textSize="25dp"
+	    android:layout_marginTop="185dp"
+	    android:textColor="#000000"  />
+	
+	<!-- Starting hole select -->
+	
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="60dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="225dp"
+	    >
+	     
+	    <Button
+	        android:id="@+id/first_hole_button"
+	        android:text="1"
+	        android:layout_height="fill_parent"
+	        android:layout_width="70dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="80dp"
+	          />
+	    
+	    <Button
+	        android:id="@+id/tenth_hole_button"
+	        android:text="10"
+	        android:layout_height="fill_parent"
+	        android:layout_width="70dp"
+			android:layout_alignParentRight="true"
+	        android:layout_marginRight="80dp"	        
+	        />	    
+	</RelativeLayout>
+	
+	<!-- # of holes text -->
+	
+		<TextView 
+	    android:id="@+id/num_of_holes_text"
+	    android:layout_centerHorizontal="true"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/num_of_holes"
+	    android:textSize="25dp"
+	    android:layout_marginTop="300dp"
+	    android:textColor="#000000"  />
+	
+	<!-- # of holes -->
+	
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="60dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="340dp"
+	    >
+	    
+	    <Button
+	        android:id="@+id/nine_holes_button"
+	        android:text="9"
+	        android:layout_height="fill_parent"
+	        android:layout_width="70dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="80dp"
+	          />
+	    
+	    <Button
+	        android:id="@+id/eighteen_holes_button"
+	        android:text="18"
+	        android:layout_height="fill_parent"
+	        android:layout_width="70dp"
+			android:layout_alignParentRight="true"
+	        android:layout_marginRight="80dp"	        
+	        />	     
+	    
+	</RelativeLayout>
+	        
+    <!-- Grass Bottom Bar -->
+    
+    <RelativeLayout 
+        android:id="@+id/TabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/grass"
+		android:orientation="horizontal"  > 
+		
+        <Button 
+            android:id="@+id/joust_button"
+            android:text="@string/joust"
+            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:gravity="center_horizontal"  
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"          
+            />
+        
+        <Button 
+            android:id="@+id/BackButton"
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

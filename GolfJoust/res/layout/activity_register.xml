@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/sky_background">
+    
+        <ImageView
+            android:id="@+id/golf_joust_logo"
+            android:layout_marginTop="5dp"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_launcher" />
+        
+        <TextView
+            android:id="@+id/registration_text"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:text="@string/registration_text"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+    
+    <LinearLayout 
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/translucent_box_background"
+        android:orientation="vertical">
+        
+        <!-- First name -->
+        <EditText 
+            android:id="@+id/register_firstName_input"
+            style="@style/input_box"
+            android:hint="@string/first_name_input_default_text"
+            android:inputType="text"/>
+        <!-- Last Name -->
+        <EditText 
+            android:id="@+id/register_lastName_input"
+            style="@style/input_box"
+            android:hint="@string/last_name_input_default_text"
+            android:inputType="text"/>
+        <!-- Email address -->
+        <EditText 
+            android:id="@+id/register_email_input"
+            style="@style/input_box"
+            android:hint="@string/email_input_default_text"
+            android:inputType="textEmailAddress"/>
+        <!-- Password -->
+                <EditText 
+            android:id="@+id/register_password_input"
+            style="@style/input_box"
+            android:hint="@string/password_input_default_text"
+            android:inputType="textPassword"/>
+        <!-- Password Confirm -->
+                <EditText 
+            android:id="@+id/password_confirm_email_input"
+            style="@style/input_box"
+            android:hint="@string/password_confirm_input_default_text"
+            android:inputType="textPassword"/>
+                
+                
+     <!-- social media logins --> 
+     <!--   
+        <LinearLayout 
+            >    
+            
+            
+        <ImageView 
+	    android:id="@+id/facebook_button"
+	    android:layout_alignParentBottom="True"
+	    android:background="@drawable/grass"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    />
+            
+            
+        </LinearLayout>
+        
+        -->
+               
+      
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/Grass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/grass" />
+
+             <Button
+                 android:id="@+id/complete_registration_button"
+                 style="@style/input_box"
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"
+                 android:text="@string/complete_registration_button_label" />
+
+</RelativeLayout>

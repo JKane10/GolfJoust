@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sky_background"
+    android:paddingTop="80dp"
+    android:paddingLeft="10dp" >
+    	
+	<ImageView 
+	    android:id="@+id/course_picture"
+	    android:src="@drawable/ic_launcher"
+	    android:layout_width="80dp"
+	    android:layout_height="80dp"/>  
+	      
+	<TextView 
+        android:id="@+id/home_course_name"
+        android:text="@string/home_course"
+        android:height="16dp"
+        android:layout_height="wrap_content" 
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/course_picture"
+        android:layout_marginLeft="10dp" />
+        
+	<TextView 
+        android:id="@+id/home_course_location"
+        android:text="@string/home_location" 
+        android:height="16dp" 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" 
+        android:layout_toRightOf="@id/course_picture"
+        android:layout_below="@id/home_course_name" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp" />
+	
+	<ImageView 
+	    android:id="@+id/thumbs_up"
+	    android:src="@drawable/ic_action_search"
+	    android:layout_width="wrap_content"
+	    android:layout_height="16dp"
+	    android:layout_below="@id/home_course_location"
+	    android:layout_toRightOf="@id/course_picture"
+	    android:layout_marginLeft="10dp" />
+	    
+	<TextView
+	    android:id="@+id/num_likes"
+	    android:text="@string/likes"
+	    android:layout_width="wrap_content"
+	    android:layout_height="16dp"
+	    android:layout_below="@id/home_course_location"
+	    android:layout_toRightOf="@id/thumbs_up" />
+	
+	<ImageView 
+	    android:id="@+id/thumbs_down"
+	    android:src="@drawable/ic_action_search"
+	    android:layout_width="wrap_content"
+	    android:layout_height="16dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_below="@id/home_course_location"
+	    android:layout_toRightOf="@id/num_likes" />
+	    
+	<TextView
+	    android:id="@+id/num_dislikes"
+	    android:text="@string/likes"
+	    android:layout_width="wrap_content"
+	    android:layout_height="16dp"
+	    android:layout_below="@id/home_course_location"
+	    android:layout_toRightOf="@id/thumbs_down" />
+	
+	
+	<Button
+        android:id="@+id/change_home_button"
+        android:text="@string/change_home"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/thumbs_up"
+	    android:layout_toRightOf="@id/course_picture"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginTop="5dp"
+	   	android:onClick="onClickChangeHomeButton" />
+	
+        <ImageButton 
+            android:id="@+id/facebook_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="12dp"
+            android:layout_width="12dp"
+            android:layout_below="@id/change_home_button"
+            android:layout_marginTop="32dp"
+			android:gravity="center_horizontal"
+            android:onClick="onClickFacebook" />
+        
+        <ImageButton
+            android:id="@+id/twitter_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="12dp"
+            android:layout_width="12dp"
+            android:layout_below="@id/change_home_button"
+            android:layout_marginTop="32dp"
+            android:layout_toRightOf="@id/facebook_icon"
+            android:onClick="onClickTwitter" />
+        
+        <ImageButton
+            android:id="@+id/linked_in"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="12dp"
+            android:layout_width="12dp"
+            android:layout_below="@id/change_home_button"
+            android:layout_marginTop="32dp"
+            android:layout_toRightOf="@id/twitter_icon"
+            android:onClick="onClickLinkedIn" />
+	
+
+</RelativeLayout>
+
+        
+    

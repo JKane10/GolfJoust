@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingTop="64dp"
+        android:paddingLeft="8dp"
+        android:background="@drawable/sky_background" >
+        
+        <ImageView 
+            android:id="@+id/profile_photo"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+        
+        <TextView 
+            android:id="@+id/profile_name_view"
+            android:text="@string/profile_name"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" 
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_marginLeft="8dp" />
+        
+        <TextView 
+            android:id="@+id/home_course_view"
+            android:text="@string/home_course" 
+            android:textSize="16dp"
+            android:layout_height="wrap_content" 
+            android:layout_width="wrap_content" 
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_below="@id/profile_name_view" 
+            android:layout_marginLeft="8dp" />
+        
+		<ImageButton 
+            android:id="@+id/facebook_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/profile_photo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickFacebook" />
+        
+        <ImageButton
+            android:id="@+id/twitter_icon"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/facebook_icon"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickTwitter" />
+        
+        <ImageButton
+            android:id="@+id/linked_in"
+            android:src="@drawable/ic_action_search"
+            android:layout_height="16dp"
+            android:layout_width="16dp"
+            android:layout_below="@id/home_course_view"
+            android:layout_toRightOf="@id/twitter_icon"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickLinkedIn" />
+        
+        <Button
+            android:id="@+id/change_home_button"
+            android:text="@string/change_home"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:layout_below="@id/facebook_icon"
+	    	android:layout_toRightOf="@id/profile_photo"
+	    	android:layout_marginRight="8dp"
+	   		android:onClick="onClickChangeHomeButton" />
+        
+     	<ListView
+        	android:id="@+id/wins_list"
+        	android:layout_below="@id/change_home_button"
+        	android:paddingTop="10dp"
+   	        android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:paddingBottom="20dp" />
+    
+        
+        </RelativeLayout>
+        
+           
+    <LinearLayout
+        android:id="@+id/TabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:background="@drawable/grass"
+        >
+        
+        <Button 
+	        android:id="@+id/ProfileButton"
+	        android:layout_width="50dp"
+	        android:layout_height="40dp"
+	        android:layout_gravity="bottom"
+	        android:background="@drawable/dealsbutton"
+	        android:onClick="onClickProfileButton"
+	        />
+        
+        <Button 
+            android:id="@+id/ProgressButton"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+	        android:layout_gravity="bottom"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+            android:background="@drawable/dealsbutton"
+            android:onClick="onClickProgressButton"
+            />
+        
+        <Button 
+            android:id="@+id/WinsButton"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+	        android:layout_gravity="bottom"
+	        android:layout_marginRight="20dp"
+            android:background="@drawable/dealsbutton"
+            android:onClick="onClickWinsButton"
+            />
+        
+        <Button 
+            android:id="@+id/SettingsButton"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/dealsbutton"
+            android:onClick="onClickSettingsButton"
+            />
+        </LinearLayout>
+        
+        <include layout = "@layout/top_bar" />
+
+</RelativeLayout>

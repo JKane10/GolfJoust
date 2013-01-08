@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_course"
+        android:title="JOUST"
+        android:icon="@drawable/joustbutton"
+        android:showAsAction="always|withText"
+        />
+</menu>
