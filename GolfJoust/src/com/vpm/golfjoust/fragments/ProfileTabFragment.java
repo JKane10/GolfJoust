@@ -38,7 +38,7 @@ public class ProfileTabFragment extends SherlockFragment {
 		View mView = inflater.inflate(R.layout.fragment_course_tab, container, false);
 	   
 		//make viewpager to switch b/w course views
-		mViewPager = (ViewPager)mView.findViewById(R.id.course_pager);
+		mViewPager = (ViewPager)mView.findViewById(R.id.social_pager);
 	    mCoursePagerAdapter = new CoursePagerAdapter(getChildFragmentManager());
 	    mViewPager.setAdapter(mCoursePagerAdapter);
 	    //set position to middle tab (nearby, for the time being)

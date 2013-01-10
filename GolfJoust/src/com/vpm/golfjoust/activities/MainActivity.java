@@ -2,108 +2,113 @@ package com.vpm.golfjoust.activities;
 
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
+import com.viewpagerindicator.IconPagerAdapter;
+import com.viewpagerindicator.TabPageIndicator;
+import com.viewpagerindicator.TitlePageIndicator;
 import com.vpm.golfjoust.R;
 import com.vpm.golfjoust.fragments.CourseTabFragment;
-import com.vpm.golfjoust.fragments.DealsTabFragment;
-import com.vpm.golfjoust.fragments.ProfileTabFragment;
-import com.vpm.golfjoust.fragments.SocialTabFragment;
 
 
 
 public class MainActivity extends SherlockFragmentActivity {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		
-		
-		ActionBar actionBar = getSupportActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
-		Tab tab = actionBar.newTab()
-				.setIcon(R.drawable.social_group)
-				.setText("SOCIAL")
-				.setTabListener(new TabListener<SocialTabFragment>(
-						this, "deals", SocialTabFragment.class));
-		actionBar.addTab(tab);
-		
-		tab = actionBar.newTab()
-				.setIcon(R.drawable.collections_labels)
-				.setText("DEALS")
-				.setTabListener(new TabListener<DealsTabFragment>(
-						this, "deals", DealsTabFragment.class));
-		actionBar.addTab(tab);
-		
-		tab = actionBar.newTab()
-				.setIcon(R.drawable.explorebutton)
-				.setText("COURSE")
-				.setTabListener(new TabListener<CourseTabFragment>(
-						this, "course", CourseTabFragment.class));
-		actionBar.addTab(tab); 
-		
-		tab = actionBar.newTab()
-				//collections sort by size drawable also nice
-				.setIcon(R.drawable.homebutton)
-				.setText("PROFILE")
-				.setTabListener(new TabListener<ProfileTabFragment>(
-						this, "deals", ProfileTabFragment.class));
-		actionBar.addTab(tab);
-	}
-	
 
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
-	public static class TabListener<T extends SherlockFragment> implements ActionBar.TabListener {
-	    private SherlockFragment mFragment;
-	    private final SherlockFragmentActivity mActivity;
-	    private final String mTag;
-	    private final Class<T> mClass;
+	//for later use in viewpager
+	CoursePagerAdapter mCoursePagerAdapter;
+    ViewPager mViewPager;
 
-	    /** Constructor used each time a new tab is created.
-	      * @param activity  The host Activity, used to instantiate the fragment
-	      * @param tag  The identifier tag for the fragment
-	      * @param clz  The fragment's Class, used to instantiate the fragment
-	      */
-	    public TabListener(SherlockFragmentActivity activity, String tag, Class<T> clz) {
-	        mActivity = activity;
-	        mTag = tag;
-	        mClass = clz;
-	    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+		setContentView(R.layout.activity_main);
+		
+	   
+		//make viewpager to switch b/w course views
+		mViewPager = (ViewPager) findViewById(R.id.main_pager);
+		//call with CHILD fragment manager... because fragmentception
+	    mCoursePagerAdapter = new CoursePagerAdapter(getSupportFragmentManager());
+	    mViewPager.setAdapter(mCoursePagerAdapter);
+	    //set position to middle tab (nearby, for the time being)
+	    mViewPager.setCurrentItem(1);
 
-	    /* The following are each of the ActionBar.TabListener callbacks */
-		public void onTabSelected(Tab tab, FragmentTransaction ft) {
-	        // Check if the fragment is already initialized
-	        if (mFragment == null) {
-	            // If not, instantiate and add it to the activity
-	            mFragment = (SherlockFragment) SherlockFragment.instantiate(mActivity, mClass.getName());
-	            ft.add(android.R.id.content, mFragment, mTag);
-	        } else {
-	            // If it exists, simply attach it in order to show it
-	            ft.attach(mFragment);
-	        }
-	    }
-
-		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-	        if (mFragment != null) {
-	            // Detach the fragment, because another one is being attached
-	            ft.detach(mFragment);
-	        }
-	    }
-
-	    public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	        // User selected the already selected tab. Usually do nothing.
-	    }
+	    //Bind the title indicator to the adapter
+	    TabPageIndicator tabIndicator = (TabPageIndicator)findViewById(R.id.titles);
+	    tabIndicator.setViewPager(mViewPager);
 
 	}
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getSupportMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+
+	public static class CoursePagerAdapter extends FragmentPagerAdapter implements IconPagerAdapter{
+
+        public CoursePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public SherlockFragment getItem(int position) {
+            switch(position) {
+            case 0:
+            	return new CourseTabFragment();
+			case 1:
+            	return new CourseTabFragment();
+			case 2:
+            	return new CourseTabFragment();
+			case 3:
+				return new CourseTabFragment();
+            default:
+            	return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 4;
+        }
+        
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch(position) {
+            case 0:
+            	return "SOCIAL";
+            case 1:
+            	return "DEALS";
+            case 2:
+            	return "COURSES";
+            case 3:
+            	return "PROFILE";
+            default:
+            	return null;
+            }
+        }
+
+		@Override
+		public int getIconResId(int index) {
+			switch(index) {
+			case 0:
+            	return R.drawable.social_group;
+            case 1:
+            	return R.drawable.collections_labels;
+            case 2:
+            	return R.drawable.explorebutton;
+            case 3:
+            	return R.drawable.homebutton;
+            default:
+            	return 0;
+            }
+		}
+
+    }
 }

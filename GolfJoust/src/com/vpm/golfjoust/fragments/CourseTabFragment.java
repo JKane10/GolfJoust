@@ -1,85 +1,64 @@
 package com.vpm.golfjoust.fragments;
 
-
-
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.SpinnerAdapter;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.OnNavigationListener;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.vpm.golfjoust.R;
 
-
-public class CourseTabFragment extends SherlockFragment {
-
-	//for later use in viewpager
-	CoursePagerAdapter mCoursePagerAdapter;
-    ViewPager mViewPager;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+public class CourseTabFragment extends SherlockFragment{
 	
-	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		ActionBar actionBar = getSherlockActivity().getSupportActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		actionBar.setDisplayShowTitleEnabled(false);
+		
+        OnNavigationListener mOnNavigationListener;
+        
+        //very important, actually
+        Context context = actionBar.getThemedContext();
+
+        SpinnerAdapter mSpinnerAdapter = ArrayAdapter
+        		.createFromResource(context, R.array.course_tabs, R.layout.sherlock_spinner_dropdown_item);
+        mOnNavigationListener = new OnNavigationListener() {
+        	
+        	String[] strings = getResources().getStringArray(R.array.course_tabs);
+        	
+        	
+            public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+            	FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                switch (itemPosition) {
+                case 0:
+                    transaction.replace(R.id.course_fragment_container, new CourseNearbyFragment(), strings[itemPosition]);
+                    transaction.commit();
+                    break;
+                case 1:
+                	transaction.replace(R.id.course_fragment_container, new CourseHomeFragment(), strings[itemPosition]);
+                    transaction.commit();
+                    break;
+                case 2:
+                	transaction.replace(R.id.course_fragment_container, new CourseSearchFragment(), strings[itemPosition]);
+                    transaction.commit();
+                    break;
+                }
+                // return super.onOptionsItemSelected(itemPosition);
+                return true;
+            }
+        };
+        actionBar.setListNavigationCallbacks(mSpinnerAdapter, mOnNavigationListener);
+    
+		
 		//set view
-		View mView = inflater.inflate(R.layout.fragment_course_tab, container, false);
-	   
-		//make viewpager to switch b/w course views
-		mViewPager = (ViewPager)mView.findViewById(R.id.course_pager);
-		//call with CHILD fragment manager... because fragmentception
-	    mCoursePagerAdapter = new CoursePagerAdapter(getChildFragmentManager());
-	    mViewPager.setAdapter(mCoursePagerAdapter);
-	    //set position to middle tab (nearby, for the time being)
-	    mViewPager.setCurrentItem(1);
-
-	    return mView;
+		return inflater.inflate(R.layout.fragment_course_tab, container, false);
 	}
-
-
-	public static class CoursePagerAdapter extends FragmentPagerAdapter {
-
-        public CoursePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public SherlockFragment getItem(int position) {
-            switch(position) {
-            case 0:
-            	return new CourseHomeFragment();
-			case 1:
-            	return new CourseNearbyFragment();
-			case 2:
-            	return new CourseSearchFragment();
-            default:
-            	return null;
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-            //make @strings for these
-                case 0: return "Home".toUpperCase();
-                case 1: return "Nearby".toUpperCase();
-                case 2: return "Search".toUpperCase();
-            }
-            return null;
-        }
-    }
-	
 }
-
-

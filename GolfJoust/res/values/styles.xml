@@ -25,6 +25,8 @@
         <item name="actionBarTabStyle">@style/example_ActionBarTabStyle</item>
         <item name="actionDropDownStyle">@style/example_DropDownNav</item>
         <item name="actionBarStyle">@style/example_solid_ActionBar</item>
+        
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
 
         <item name="android:actionBarItemBackground">@drawable/selectable_background_example</item>
         <item name="android:popupMenuStyle">@style/example_PopupMenu</item>
@@ -38,6 +40,24 @@
         <item name="actionBarWidgetTheme">@style/Theme.example.widget</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.example.widget</item>
 
+    </style>
+    
+    <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:background">@drawable/tab_indicator_ab_example</item>
+        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:divider">@drawable/abs__list_divider_holo_dark</item>
+        <item name="android:dividerPadding">12dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+    </style>
+
+    <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
+        <item name="android:typeface">normal</item>
     </style>
 
     <style name="example_solid_ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
@@ -66,6 +86,7 @@
 	
     <style name="example_DropDownListView" parent="@style/Widget.Sherlock.ListView.DropDown">
         <item name="android:listSelector">@drawable/selectable_background_example</item>
+        <item name="android:divider">@drawable/abs__list_divider_holo_dark</item>
     </style>
 
     <style name="example_ActionBarTabStyle" parent="@style/Widget.Sherlock.ActionBar.TabView">
@@ -81,6 +102,8 @@
         <item name="android:background">@drawable/spinner_background_ab_example</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_example</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_example</item>
+        <item name="android:dropDownWidth">128dp</item>
+        <item name="android:paddingRight">64dp</item>
     </style>
     
     <style name="example_ProgressBar" parent="@style/Widget.Sherlock.ProgressBar.Horizontal">
